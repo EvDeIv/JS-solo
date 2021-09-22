@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://goitacademy.github.io/parcel-project-template",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --out-dir build/output /./"
+    "build": "parcel build src/*.html --public-url ./dist/"
   },
   "repository": {
     "type": "git",
