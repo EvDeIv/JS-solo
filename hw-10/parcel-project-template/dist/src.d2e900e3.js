@@ -15,4 +15,4 @@ const e=document.querySelector(".js-switch-input"),t=document.querySelector("bod
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/templating"),require("./js/theme");
 },{"./sass/main.scss":"clu1","./js/templating":"mfE2","./js/theme":"qwQt"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.ff21d471.js.map
+//# sourceMappingURL=/parcel-project-template/src.d2e900e3.js.map
