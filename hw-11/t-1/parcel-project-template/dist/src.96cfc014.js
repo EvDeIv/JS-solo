@@ -1,0 +1,12 @@
+parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"clu1":[function(require,module,exports) {
+
+},{}],"ezq4":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e=(e,t)=>Math.floor(Math.random()*(t-e+1)+e);var t=e;exports.default=t;
+},{}],"oLA8":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e=["#FFFFFF","#2196F3","#4CAF50","#FF9800","#009688","#795548"];var t=e;exports.default=t;
+},{}],"UOqS":[function(require,module,exports) {
+"use strict";var t=o(require("./randomNumber")),e=o(require("./colors.js"));function o(t){return t&&t.__esModule?t:{default:t}}const n={startButton:document.querySelector('[data-action="start"]'),stopButton:document.querySelector('[data-action="stop"]'),body:document.body};let r,u=!1;function a(o){r||o.target===n.stopButton?(clearInterval(r),r=null):r=setInterval(()=>{n.body.style.backgroundColor=e.default[(0,t.default)(0,e.default.length)]},1e3)}n.startButton.addEventListener("click",function(t){u||(a(t),u=!0)}),n.stopButton.addEventListener("click",function(t){u&&(a(t),u=!1)});
+},{"./randomNumber":"ezq4","./colors.js":"oLA8"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/colorSwitcher");
+},{"./sass/main.scss":"clu1","./js/colorSwitcher":"UOqS"}]},{},["Focm"], null)
+//# sourceMappingURL=src.96cfc014.js.map
