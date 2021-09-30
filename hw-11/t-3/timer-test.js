@@ -36,21 +36,42 @@ class FLipper {
 }
 
 function getTimeFromDate(date) {
-  return date.toTimeString().slice(0, 8).split(":").join("");
+  const dateWithoutCmtOffset = new Date(
+    date.getTime() + date.getTimezoneOffset() * 60 * 1000
+  );
+  const dateWithiutDays = dateWithoutCmtOffset
+    .toTimeString()
+    .slice(0, 8)
+    .split(":")
+    .join("");
+  const daysOfDate = pad(Math.floor(date / (1000 * 60 * 60 * 24))).toString();
+
+  return daysOfDate + dateWithiutDays;
+}
+
+function pad(value) {
+  return String(value).padStart(2, "0");
 }
 
 const flips = document.querySelectorAll(".flip");
-let now = new Date();
-let nowTimeStr = getTimeFromDate(new Date(now.getTime() - 1000));
-let nextTimeStr = getTimeFromDate(now);
+const now = new Date();
+const targetDate = new Date("January 1 2022 00:00:00");
+const deltaTime = new Date(targetDate.getTime() - now.getTime());
+const nowTimeStr = getTimeFromDate(deltaTime);
+const nextTimeStr = getTimeFromDate(new Date(deltaTime.getTime() - 1000));
+
 const flippers = Array.from(flips).map(function (flip, i) {
   return new FLipper(flip, nowTimeStr[i], nextTimeStr[i]);
 });
 
 setInterval(() => {
-  let now = new Date();
-  let nowTimeStr = getTimeFromDate(new Date(now.getTime() - 1000));
-  let nextTimeStr = getTimeFromDate(now);
+  const now = new Date();
+  const targetDate = new Date("January 1 2022 00:00:00");
+  const deltaTime = new Date(targetDate.getTime() - now.getTime());
+  const nowTimeStr = getTimeFromDate(deltaTime);
+  const nextTimeStr = getTimeFromDate(new Date(deltaTime.getTime() - 1000));
+  console.log(getTimeFromDate(deltaTime));
+  console.log(getTimeFromDate(new Date(deltaTime.getTime() - 1000)));
 
   for (let i = 0; i < flippers.length; i++) {
     if (nowTimeStr[i] === nextTimeStr[i]) {
