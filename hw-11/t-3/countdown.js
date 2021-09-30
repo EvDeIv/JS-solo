@@ -70,8 +70,6 @@ setInterval(() => {
   const deltaTime = new Date(targetDate.getTime() - now.getTime());
   const nowTimeStr = getTimeFromDate(deltaTime);
   const nextTimeStr = getTimeFromDate(new Date(deltaTime.getTime() - 1000));
-  console.log(getTimeFromDate(deltaTime));
-  console.log(getTimeFromDate(new Date(deltaTime.getTime() - 1000)));
 
   for (let i = 0; i < flippers.length; i++) {
     if (nowTimeStr[i] === nextTimeStr[i]) {
