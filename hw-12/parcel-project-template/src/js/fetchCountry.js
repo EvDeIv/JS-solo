@@ -16,7 +16,6 @@ function fetchCountry(event) {
       return responce.json();
     })
     .then(data => {
-      console.log(data);
       if (data.status === 404) {
         throw Error(data.message);
       }
