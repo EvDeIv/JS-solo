@@ -17,7 +17,7 @@ function fetchCountry(event) {
     })
     .then(data => {
       if (data.status === 404) {
-        throw Error(data.message);
+        throw Error();
       }
       generateMarkup(data);
     })
